@@ -189,18 +189,14 @@ function loadEducation() {
 
 function renderEducation(items, container) {
     container.innerHTML = '';
-
     items.forEach(item => {
         const educationItem = document.createElement('div');
         educationItem.className = 'education-item';
-
         educationItem.innerHTML = `
             <div class="education-logo">
                 <img src="${item.logo}" alt="${item.school}">
             </div>
-
             <div class="education-body">
-
                 <div class="education-header">
                     <h3>${item.school}</h3>
 
@@ -208,14 +204,11 @@ function renderEducation(items, container) {
                         ${item.date}
                     </span>
                 </div>
-
-                <p>${item.research}</p>
-                <p>${item.advisor}</p>
-                <p>${item.degree}</p>
-
+                ${item.research ? `<p>${item.research}</p>` : ''}
+                ${item.advisor ? `<p>${item.advisor}</p>` : ''}
+                ${item.degree ? `<p>${item.degree}</p>` : ''}
             </div>
         `;
-
         container.appendChild(educationItem);
     });
 }
