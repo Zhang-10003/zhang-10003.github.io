@@ -1,0 +1,18 @@
+[
+  {
+    "school": "Central South University",
+    "logo": "assets/education/csu.png",
+    "research": "Visual and multimodal foundation models, visual generation, and Flow Matching",
+    "advisor": "Advisor: Prof. Chengchao Shen",
+    "degree": "M.Eng. in Computer Science",
+    "date": "Sep. 2026 – Jun. 2029"
+  },
+  {
+    "school": "Nanjing Forestry University",
+    "logo": "assets/education/njfu.png",
+    "research": "Computer vision, semantic segmentation, object detection, and low-level vision",
+    "advisor": "Advisor: Prof. Li Zhang",
+    "degree": "B.Eng. in Artificial Intelligence",
+    "date": "Sep. 2022 – Jun. 2026"
+  }
+]

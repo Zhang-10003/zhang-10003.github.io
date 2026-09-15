@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadNews();
     loadHonors();
     loadPublications();
+    loadEducation();
 });
 
 function setupMobileMenu() {
@@ -166,6 +167,57 @@ function loadPublications() {
                 container.innerHTML = '<p>Failed to load publications.</p>';
             }
         });
+}
+
+// 
+function loadEducation() {
+    const container = document.getElementById('education-container');
+
+    if (!container) {
+        return;
+    }
+
+    fetch(getDataPath('education.json'))
+        .then(handleJsonResponse)
+        .then(items => {
+            renderEducation(items, container);
+        })
+        .catch(error => {
+            console.error('Error loading education data:', error);
+        });
+}
+
+function renderEducation(items, container) {
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const educationItem = document.createElement('div');
+        educationItem.className = 'education-item';
+
+        educationItem.innerHTML = `
+            <div class="education-logo">
+                <img src="${item.logo}" alt="${item.school}">
+            </div>
+
+            <div class="education-body">
+
+                <div class="education-header">
+                    <h3>${item.school}</h3>
+
+                    <span class="education-date">
+                        ${item.date}
+                    </span>
+                </div>
+
+                <p>${item.research}</p>
+                <p>${item.advisor}</p>
+                <p>${item.degree}</p>
+
+            </div>
+        `;
+
+        container.appendChild(educationItem);
+    });
 }
 
 function renderFeaturedPublications(container, publications) {

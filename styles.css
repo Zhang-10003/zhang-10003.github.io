@@ -580,3 +580,141 @@ details summary {
         align-items: stretch;
     }
 }
+
+
+/* Education */
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+
+/* 一整个学校条目 */
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.7rem;
+}
+
+
+/* 左侧校徽 */
+.education-logo {
+    width: 90px;
+    min-width: 90px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.education-logo img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+    display: block;
+}
+
+
+/* 右侧整个文字区域 */
+.education-body {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* 第一行：学校名称 + 时间 */
+.education-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 2rem;
+    margin-bottom: 0.35rem;
+}
+
+
+/* 学校名称 */
+.education-header h3 {
+    margin: 0;
+
+    font-family: 'Crimson Text', serif;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    font-weight: 700;
+
+    color: #1e293b;
+}
+
+
+/* 时间 */
+.education-date {
+    flex-shrink: 0;
+
+    font-family: 'Crimson Text', serif;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    font-style: italic;
+    font-weight: 400;
+
+    color: #303640;
+
+    white-space: nowrap;
+}
+
+
+/* 下面三行说明文字 */
+.education-body p {
+    margin: 0.12rem 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: #30343b;
+}
+
+
+/* 手机端 */
+@media (max-width: 768px) {
+
+    .education-list {
+        gap: 2.2rem;
+    }
+
+    .education-item {
+        gap: 1rem;
+    }
+
+    .education-logo {
+        width: 60px;
+        min-width: 60px;
+    }
+
+    .education-logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .education-header {
+        display: block;
+        margin-bottom: 0.4rem;
+    }
+
+    .education-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .education-date {
+        display: block;
+        margin-top: 0.2rem;
+        font-size: 1rem;
+    }
+
+    .education-body p {
+        font-size: 0.92rem;
+    }
+}
