@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadNews();
     loadHonors();
     loadPublications();
+    loadExperience();
     loadEducation();
 });
 
@@ -210,6 +211,62 @@ function renderEducation(items, container) {
             </div>
         `;
         container.appendChild(educationItem);
+    });
+}
+//
+function loadExperience() {
+    const container = document.getElementById('experience-container');
+
+    if (!container) {
+        return;
+    }
+
+    fetch(getDataPath('experience.json'))
+        .then(handleJsonResponse)
+        .then(items => {
+            renderExperience(items, container);
+        })
+        .catch(error => {
+            console.error('Error loading experience data:', error);
+        });
+}
+
+
+function renderExperience(items, container) {
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const experienceItem = document.createElement('div');
+
+        experienceItem.className = 'experience-item';
+
+        experienceItem.innerHTML = `
+            <div class="experience-logo">
+                <img src="${item.logo}" alt="${item.organization}">
+            </div>
+
+            <div class="experience-body">
+
+                <div class="experience-header">
+                    <h3>${item.organization}</h3>
+
+                    <span class="experience-date">
+                        ${item.date}
+                    </span>
+                </div>
+
+                ${
+                    item.unit || item.location
+                        ? `<p>${item.unit || ''}${item.unit && item.location ? ' · ' : ''}${item.location || ''}</p>`
+                        : ''
+                }
+
+                ${item.role ? `<p>${item.role}</p>` : ''}
+
+            </div>
+        `;
+
+        container.appendChild(experienceItem);
     });
 }
 

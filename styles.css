@@ -582,24 +582,22 @@ details summary {
 }
 
 
-/* Education */
-
+/* Education Experience */
+.experience-list,
 .education-list {
     display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
-
-/* 一整个学校条目 */
+.experience-item,
 .education-item {
     display: flex;
     align-items: flex-start;
     gap: 1.7rem;
 }
 
-
-/* 左侧校徽 */
+.experience-logo,
 .education-logo {
     width: 90px;
     min-width: 90px;
@@ -609,6 +607,7 @@ details summary {
     justify-content: center;
 }
 
+.experience-logo img,
 .education-logo img {
     width: 80px;
     height: 80px;
@@ -618,14 +617,14 @@ details summary {
 }
 
 
-/* 右侧整个文字区域 */
+.experience-body,
 .education-body {
     flex: 1;
     min-width: 0;
 }
 
 
-/* 第一行：学校名称 + 时间 */
+.experience-header,
 .education-header {
     display: flex;
     align-items: baseline;
@@ -636,7 +635,7 @@ details summary {
 }
 
 
-/* 学校名称 */
+.experience-header h3,
 .education-header h3 {
     margin: 0;
 
@@ -649,7 +648,7 @@ details summary {
 }
 
 
-/* 时间 */
+.experience-date,
 .education-date {
     flex-shrink: 0;
 
@@ -665,7 +664,7 @@ details summary {
 }
 
 
-/* 下面三行说明文字 */
+.experience-body p,
 .education-body p {
     margin: 0.12rem 0;
 
@@ -678,42 +677,41 @@ details summary {
 }
 
 
-/* 手机端 */
 @media (max-width: 768px) {
-
+    .experience-list,
     .education-list {
         gap: 2.2rem;
     }
-
+    .experience-item,
     .education-item {
         gap: 1rem;
     }
-
+    .experience-logo,
     .education-logo {
         width: 60px;
         min-width: 60px;
     }
-
+    .experience-logo img,
     .education-logo img {
         width: 55px;
         height: 55px;
     }
-
+    .experience-header,
     .education-header {
         display: block;
         margin-bottom: 0.4rem;
     }
-
+    .experience-header h3,
     .education-header h3 {
         font-size: 1.3rem;
     }
-
+    .experience-date,
     .education-date {
         display: block;
         margin-top: 0.2rem;
         font-size: 1rem;
     }
-
+    .experience-body p,
     .education-body p {
         font-size: 0.92rem;
     }
